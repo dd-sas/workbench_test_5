@@ -1,1 +1,122 @@
-<project name="workbench_test_5" pubsub="auto" threads="1" use-tagged-token="true"><contqueries><contquery name="cq1" trace="Score"><windows><window-source name="Source" autogen-key="true" insert-only="true"><schema><fields><field name="id" type="int64" key="true"></field><field name="engine" type="int32"></field><field name="cycle" type="int32"></field><field name="x1" type="double"></field><field name="x2" type="double"></field><field name="x3" type="double"></field><field name="x4" type="double"></field><field name="x5" type="double"></field><field name="x6" type="double"></field><field name="x7" type="double"></field><field name="x8" type="double"></field><field name="x9" type="double"></field><field name="x10" type="double"></field><field name="x11" type="double"></field><field name="x12" type="double"></field><field name="x13" type="double"></field><field name="x14" type="double"></field><field name="x15" type="double"></field><field name="x16" type="double"></field><field name="x17" type="double"></field><field name="x18" type="double"></field><field name="x19" type="double"></field><field name="x20" type="double"></field><field name="x21" type="double"></field><field name="x22" type="double"></field><field name="x23" type="double"></field><field name="x24" type="double"></field></fields></schema><connectors><connector name="Score_connector" class="fs"><properties><property name="type"><![CDATA[pub]]></property><property name="fstype"><![CDATA[csv]]></property><property name="fsname"><![CDATA[@ESP_PROJECT_HOME@/test_files/score.csv]]></property><property name="noautogenfield"><![CDATA[true]]></property><property name="addcsvopcode"><![CDATA[true]]></property><property name="addcsvflags"><![CDATA[normal]]></property><property name="header"><![CDATA[1]]></property></properties></connector></connectors></window-source><window-model-reader name="ModelReader" model-type="astore"><parameters><properties><property name="reference"><![CDATA[@ESP_PROJECT_HOME@/test_files/wb_svdd.sasast]]></property><property name="action"><![CDATA[load]]></property><property name="type"><![CDATA[astore]]></property></properties></parameters></window-model-reader><window-score name="Score"><schema><fields><field name="id" type="int64" key="true"></field><field name="engine" type="int32"></field><field name="cycle" type="int32"></field><field name="x1" type="double"></field><field name="x2" type="double"></field><field name="x3" type="double"></field><field name="x4" type="double"></field><field name="x5" type="double"></field><field name="x6" type="double"></field><field name="x7" type="double"></field><field name="x8" type="double"></field><field name="x9" type="double"></field><field name="x10" type="double"></field><field name="x11" type="double"></field><field name="x12" type="double"></field><field name="x13" type="double"></field><field name="x14" type="double"></field><field name="x15" type="double"></field><field name="x16" type="double"></field><field name="x17" type="double"></field><field name="x18" type="double"></field><field name="x19" type="double"></field><field name="x20" type="double"></field><field name="x21" type="double"></field><field name="x22" type="double"></field><field name="x23" type="double"></field><field name="x24" type="double"></field><field name="_SVDDSCORE_" type="double"></field><field name="_SVDDDISTANCE_" type="double"></field></fields></schema><models><offline model-type="astore"></offline></models><connectors><connector name="Result_connector" class="fs"><properties><property name="type"><![CDATA[sub]]></property><property name="fstype"><![CDATA[csv]]></property><property name="fsname"><![CDATA[@ESP_PROJECT_OUTPUT@/result.csv]]></property><property name="snapshot"><![CDATA[true]]></property></properties></connector></connectors></window-score></windows><edges><edge source="Source" target="Score" role="data"></edge><edge source="ModelReader" target="Score" role="model"></edge></edges></contquery></contqueries></project>
+<project name="workbench_test_5" pubsub="auto" threads="1" use-tagged-token="true" heartbeat-interval="1">
+  <metadata>
+    <meta id="studioUploadedBy">sasboot</meta>
+    <meta id="studioUploaded">1729181598779</meta>
+    <meta id="studioModifiedBy">sasboot</meta>
+    <meta id="studioModified">1729181611535</meta>
+    <meta id="layout">{"cq1":{"ModelReader":{"x":50,"y":50},"Score":{"x":50,"y":175},"Source":{"x":290,"y":50}}}</meta>
+  </metadata>
+  <contqueries>
+    <contquery name="cq1" trace="Score">
+      <windows>
+        <window-source name="Source" autogen-key="true" insert-only="true">
+          <schema>
+            <fields>
+              <field name="id" type="int64" key="true"/>
+              <field name="engine" type="int32"/>
+              <field name="cycle" type="int32"/>
+              <field name="x1" type="double"/>
+              <field name="x2" type="double"/>
+              <field name="x3" type="double"/>
+              <field name="x4" type="double"/>
+              <field name="x5" type="double"/>
+              <field name="x6" type="double"/>
+              <field name="x7" type="double"/>
+              <field name="x8" type="double"/>
+              <field name="x9" type="double"/>
+              <field name="x10" type="double"/>
+              <field name="x11" type="double"/>
+              <field name="x12" type="double"/>
+              <field name="x13" type="double"/>
+              <field name="x14" type="double"/>
+              <field name="x15" type="double"/>
+              <field name="x16" type="double"/>
+              <field name="x17" type="double"/>
+              <field name="x18" type="double"/>
+              <field name="x19" type="double"/>
+              <field name="x20" type="double"/>
+              <field name="x21" type="double"/>
+              <field name="x22" type="double"/>
+              <field name="x23" type="double"/>
+              <field name="x24" type="double"/>
+            </fields>
+          </schema>
+          <connectors>
+            <connector name="Score_connector" class="fs">
+              <properties>
+                <property name="type"><![CDATA[pub]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+                <property name="fsname"><![CDATA[@ESP_PROJECT_HOME@/test_files/score.csv]]></property>
+                <property name="noautogenfield"><![CDATA[true]]></property>
+                <property name="addcsvopcode"><![CDATA[true]]></property>
+                <property name="addcsvflags"><![CDATA[normal]]></property>
+                <property name="header"><![CDATA[1]]></property>
+              </properties>
+            </connector>
+          </connectors>
+        </window-source>
+        <window-model-reader name="ModelReader" model-type="astore">
+          <parameters>
+            <properties>
+              <property name="reference"><![CDATA[@ESP_PROJECT_HOME@/test_files/wb_svdd.sasast]]></property>
+              <property name="action"><![CDATA[load]]></property>
+              <property name="type"><![CDATA[astore]]></property>
+            </properties>
+          </parameters>
+        </window-model-reader>
+        <window-score name="Score">
+          <schema>
+            <fields>
+              <field name="id" type="int64" key="true"/>
+              <field name="engine" type="int32"/>
+              <field name="cycle" type="int32"/>
+              <field name="x1" type="double"/>
+              <field name="x2" type="double"/>
+              <field name="x3" type="double"/>
+              <field name="x4" type="double"/>
+              <field name="x5" type="double"/>
+              <field name="x6" type="double"/>
+              <field name="x7" type="double"/>
+              <field name="x8" type="double"/>
+              <field name="x9" type="double"/>
+              <field name="x10" type="double"/>
+              <field name="x11" type="double"/>
+              <field name="x12" type="double"/>
+              <field name="x13" type="double"/>
+              <field name="x14" type="double"/>
+              <field name="x15" type="double"/>
+              <field name="x16" type="double"/>
+              <field name="x17" type="double"/>
+              <field name="x18" type="double"/>
+              <field name="x19" type="double"/>
+              <field name="x20" type="double"/>
+              <field name="x21" type="double"/>
+              <field name="x22" type="double"/>
+              <field name="x23" type="double"/>
+              <field name="x24" type="double"/>
+              <field name="_SVDDSCORE_" type="double"/>
+              <field name="_SVDDDISTANCE_" type="double"/>
+            </fields>
+          </schema>
+          <models>
+            <offline model-type="astore"/>
+          </models>
+          <connectors>
+            <connector name="Result_connector" class="fs">
+              <properties>
+                <property name="type"><![CDATA[sub]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+                <property name="fsname"><![CDATA[@ESP_PROJECT_OUTPUT@/result.csv]]></property>
+                <property name="snapshot"><![CDATA[true]]></property>
+              </properties>
+            </connector>
+          </connectors>
+        </window-score>
+      </windows>
+      <edges>
+        <edge source="Source" target="Score" role="data"/>
+        <edge source="ModelReader" target="Score" role="model"/>
+      </edges>
+    </contquery>
+  </contqueries>
+</project>
